@@ -40,9 +40,10 @@ class FlightList(APIView):
     if departure_date is not None:
       now = datetime.today()
       departure_date = datetime.strptime(departure_date, '%Y-%m-%d %H:%M:%S 01')
-      if departure_date < now:
+      delta = departure_date - now
+      if departure_date < now or delta.days >= 182.5:
         return Response(
-          {'error': 'Departure date must be in the future'},
+          {'error': 'Departure date must be in the future and not greater than 6 months'},
           status.HTTP_422_UNPROCESSABLE_ENTITY
         )
     
