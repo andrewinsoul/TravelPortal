@@ -2,7 +2,7 @@ from django_seed import Seed
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 import string
-from travelportal_api.apps.TravelPortalSearch.models import Airport, Flight
+from travelportal_api.apps.TravelPortalSearch.models import Airport, Flight, City, Country
 import random
 
 seeder = Seed.seeder();
@@ -11,10 +11,19 @@ class Command(BaseCommand):
   help = 'seed database'
 
   def handle(self, *args, **kwargs):
-    seeder.add_entity(Airport, 30, {
-      'name': lambda x: seeder.faker.city(),
+    seeder.add_entity(City, 20, {
       'code': lambda x: ''.join(random.choice(string.ascii_uppercase) for _ in range(3)),
-      'country': lambda x: seeder.faker.country()
+      'name': lambda x: seeder.faker.city()
+    })
+
+    seeder.add_entity(Country, 30, {
+      'code': lambda x: ''.join(random.choice(string.ascii_uppercase) for _ in range(3)),
+      'name': lambda x: seeder.faker.country()
+    })
+    
+    seeder.add_entity(Airport, 40, {
+      'name': lambda x: seeder.faker.name(),
+      'code': lambda x: ''.join(random.choice(string.ascii_uppercase) for _ in range(3)),
     })
 
     category = ["All", "Economy", "Business", "First", "Premium"]

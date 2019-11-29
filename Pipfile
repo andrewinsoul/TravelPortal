@@ -11,6 +11,7 @@ django = "*"
 djangorestframework = "*"
 psycopg2 = "==2.7.7"
 django-seed = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"
