@@ -15,7 +15,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'travelportal_api.apps.TravelPortalSearch'
+    'travelportal_api.apps.TravelPortalSearch',
+    'rest_framework',
+    'django_filters',
+    'django_seed'
 ]
 
 
