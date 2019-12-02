@@ -28,3 +28,7 @@ DATABASES = {
 
     }
 }
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (('staticfiles'),)
+STATIC_URL = '/staticfiles/admin/'
+print('>>>>>>>>>>> ', STATIC_ROOT)

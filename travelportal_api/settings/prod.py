@@ -13,3 +13,7 @@ DATABASES['default'] = dj_database_url.config(
     default=DB_URL,
     engine='django.db.backends.postgresql'
 )
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (('static'),)
+STATIC_URL = '/static/admin/'

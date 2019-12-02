@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/lineicons.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/weather-icons.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/mystyles.css' %}" type="text/css"/>
+  </head>
+    {% block page_content %}{% endblock %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/moment.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYeBBmgAkyAN_QKjAVOiP_kWZ_eQdadeI&callback=initMap&libraries=places"></script>
+    <script src="{% static 'js/owl-carousel.js' %}"></script>
+    <script src="{% static 'js/blur-area.js' %}"></script>
+    <script src="{% static 'js/icheck.js' %}"></script>
+    <script src="{% static 'js/gmap.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.js' %}"></script>
+    <script src="{% static 'js/ion-range-slider.js' %}"></script>
+    <script src="{% static 'js/sticky-kit.js' %}"></script>
+    <script src="{% static 'js/smooth-scroll.js' %}"></script>
+    <script src="{% static 'js/fotorama.js' %}"></script>
+    <script src="{% static 'js/bs-datepicker.js' %}"></script>
+    <script src="{% static 'js/typeahead.js' %}"></script>
+    <script src="{% static 'js/quantity-selector.js' %}"></script>
+    <script src="{% static 'js/countdown.js' %}"></script>
+    <script src="{% static 'js/window-scroll-action.js' %}"></script>
+    <script src="{% static 'js/fitvid.js' %}"></script>
+    <script src="{% static 'js/youtube-bg.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>
+`
