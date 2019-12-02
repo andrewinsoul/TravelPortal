@@ -8,10 +8,11 @@ verify_ssl = true
 [packages]
 dj-database-url = "*"
 django = "*"
-djangorestframework = "*"
 psycopg2 = "==2.7.7"
 django-seed = "*"
-django-filter = "*"
+gunicorn = "*"
+whitenoise = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
