@@ -12,6 +12,7 @@ psycopg2 = "==2.7.7"
 django-seed = "*"
 gunicorn = "*"
 whitenoise = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
