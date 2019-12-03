@@ -1,0 +1,58 @@
+.search-table {
+  color: white;
+  width: 100%;
+}
+.search-table tr, .search-table td, .search-table th {
+  border: 1px solid white;
+  padding: 15px;
+}
+.search-table th {
+  background-color: green;
+}
+
+.search-table tr:hover{
+  background: rgba(30,130, 30, 0.5);
+}
+caption {
+  text-align: center;
+  color: #ddd;
+}
+
+@media screen and (max-width: 992px) {
+  .search-table {
+    border: 0;
+  }
+  .search-table tr:hover{
+    background: rgba(127,127,127);
+  }
+  .search-table tr {
+    border: 1px solid white;
+    margin-bottom: 16px;
+  }
+  .search-table caption {
+    font-size: 1.5em;
+    margin: .25em 0 .75em;
+  }
+  .search-table td, .search-table th {
+    border: none
+  }
+  .search-table thead {
+    display: none;
+  }
+  .search-table tr {
+    display: block;
+    margin-bottom: 29px;
+  }
+  .search-table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  .search-table td:before {
+    content: attr(data-holder);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

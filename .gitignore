@@ -25,7 +25,9 @@ wheels/
 *.egg
 MANIFEST
 
-staticfiles/
+
+
+.DS_Store
 
 # vscode settings
 /.vscode
