@@ -1178,7 +1178,10 @@
                             </label>
                           </div>
                         </div>
+                        
+
                         <table class="search-table">
+                          <caption>Flight Search Results</caption>
                           <thead>
                             <tr>
                               <th>Name of Flight</th>
@@ -1191,24 +1194,29 @@
                               <th>Arrival Time</th>
                             </tr>
                           </thead>
-                          <tbody>
+                          
+                          <tbody style="height: 40px; overflow-y: scroll;">
                             {% if not queryset %}
                               <p style="color: wheat;">No flight was found within your search</p>
+                            {% else %}
+                              {% for flight in queryset %}
+                                <tr>
+                                  <td scope="row" data-holder="flight name">{{ flight.name }} Airlines</td>
+                                  <td data-holder="take-off airport name">{{ flight.departure.name }} Airport, {{ flight.departure.country.name }}</td>
+                                  <td data-holder="arrival airport name">{{ flight.arrival.name }} Airport, {{ flight.arrival.country.name }}</td>
+                                  <td data-holder="price">{{ flight.price|format_price }}</td>
+                                  <td data-holder="departure date">{{ flight.departure_date|throw_date }}</td>
+                                  <td data-holder="departure time">{{ flight.departure_date|throw_time }}</td>
+                                  <td data-holder="arrival date">{{ flight.return_date|throw_date }}</td>
+                                  <td data-holder="arrival time">{{ flight.return_date|throw_time }}</td>
+                                </tr>
+                              {% endfor %}
                             {% endif %}
-                            {% for flight in queryset %}
-                              <tr>
-                                <td scope="row" data-holder="flight name">{{ flight.name }} Airlines</td>
-                                <td data-holder="take-off airport name">{{ flight.departure.name }} Airport, {{ flight.departure.country.name }}</td>
-                                <td data-holder="arrival airport name">{{ flight.arrival.name }} Airport, {{ flight.arrival.country.name }}</td>
-                                <td data-holder="price">{{ flight.price|format_price }}</td>
-                                <td data-holder="departure date">{{ flight.departure_date|throw_date }}</td>
-                                <td data-holder="departure time">{{ flight.departure_date|throw_time }}</td>
-                                <td data-holder="arrival date">{{ flight.return_date|throw_date }}</td>
-                                <td data-holder="arrival time">{{ flight.return_date|throw_time }}</td>
-                              </tr>
-                            {% endfor %}
                           </tbody>
-                          </table>                          
+                          
+                        </table>                          
+                        
+                        
                       </div>
                     </div>
                   </div>
